@@ -23,22 +23,7 @@ if not UPSTAGE_API_KEY:
 
 # --- 1. 카페 메뉴 데이터 파일 생성 및 벡터 DB 구축 ---
 
-# 주의: 실제 파일 경로를 현재 프로젝트 구조에 맞게 수정해야 합니다.
-# 예시: './data/cafe_menu_data.txt' 파일에 메뉴 정보가 있어야 합니다.
 file_path = file_path = '/Applications/SK-Shieldus-Rookies_Cloud_Study/mylangchain/mylangchain-app/src/mylangchain_app/Practice/data/cafe_menu_data.txt'
-
-# 더미 메뉴 데이터 파일 생성 (파일이 없을 경우 대비)
-if not os.path.exists(file_path):
-    os.makedirs('./data', exist_ok=True)
-    with open(file_path, 'w', encoding='utf-8') as f:
-        f.write("아메리카노: 4,500원. 재료: 에스프레소, 뜨거운 물. 특징: 원두 본연의 맛을 강조한 깔끔한 기본 커피.\n")
-        f.write("카페 라떼: 5,000원. 재료: 에스프레소, 우유. 특징: 부드러운 우유 거품과 에스프레소의 조화.\n")
-        f.write("카푸치노: 5,000원. 재료: 에스프레소, 스팀 우유, 두꺼운 우유 거품. 특징: 풍부한 거품과 시나몬 향이 특징.\n")
-        f.write("에스프레소: 3,500원. 재료: 커피 원액. 특징: 이탈리아식 진한 커피.\n")
-        f.write("바닐라 라떼: 5,500원. 재료: 에스프레소, 우유, 바닐라 시럽. 특징: 달콤하고 부드러움.\n")
-        f.write("초코 케이크: 6,000원. 재료: 초콜릿, 밀가루, 계란. 특징: 진한 다크 초콜릿 맛.\n")
-        f.write("블루베리 베이글: 3,000원. 재료: 밀가루, 블루베리. 특징: 아침 식사로 좋음.\n")
-    print(f"⚠️ 경고: '{file_path}' 파일이 없어 기본 더미 파일을 생성했습니다.")
 
 try:
     # 1. 카페 메뉴 텍스트 파일 로드
@@ -80,8 +65,8 @@ def tavily_search_func(query: str) -> str:
     :param query: 검색 쿼리
     :return: 검색된 결과
     """
-    api_url = "https://api.tavily.com/search"  # 실제 Tavily API URL로 변경해야 함
-    api_key = "TAVILY_API_KEY"  # 자신의 Tavily API 키를 여기에 입력
+    api_url = "https://api.tavily.com/search"  
+    api_key = "TAVILY_API_KEY"  
     
     params = {
         "q": query,  # 검색 쿼리
