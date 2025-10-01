@@ -23,7 +23,7 @@ if not UPSTAGE_API_KEY:
 
 # --- 1. 카페 메뉴 데이터 파일 생성 및 벡터 DB 구축 ---
 
-file_path = file_path = '/Applications/SK-Shieldus-Rookies_Cloud_Study/mylangchain/mylangchain-app/src/mylangchain_app/Practice/data/cafe_menu_data.txt'
+file_path = '/Applications/SK-Shieldus-Rookies_Cloud_Study/mylangchain/mylangchain-app/src/mylangchain_app/Practice/data/cafe_menu_data.txt'
 
 try:
     # 1. 카페 메뉴 텍스트 파일 로드
